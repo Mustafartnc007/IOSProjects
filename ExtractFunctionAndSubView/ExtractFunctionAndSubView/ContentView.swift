@@ -1,24 +1,20 @@
-//
-//  ContentView.swift
-//  ExtractFunctionAndSubView
-//
-//  Created by Mustafa Ertunç on 7.05.2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var backgroundColor: Color = .blue
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            backgroundColor
+                .edgesIgnoringSafeArea(.all)
+
+            // MyView'i çağırıyoruz ve backgroundColor'ı @Binding ile bağlıyoruz
+            MyView(backgroundColor: $backgroundColor)
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+//YES
